@@ -1,0 +1,43 @@
+<html>
+<link href="css/style.css" rel="stylesheet" />
+<body>
+<script src="js/lib/angular.js"></script>
+<script src="js/controller.js"></script>
+<div ng-app="myApp">
+	<div ng-controller="img_content" class="example2">
+		<div>
+			<table class="table_tag" ng-repeat='tile in tiles'>
+				<tr>
+					<td rowspan="2" class="custom_accordion" ng-model="show">
+						<img ng-src="{{tile.image_path}}">
+					</td>
+					<td ng-model="show" class="custom_accordion_content" ng-class="{selected : show_single_content(tile)}" ng-click="select_image(tile)" >
+						{{tile.title}}
+					</td>
+				</tr>
+				<tr>
+					<td class="custom_accordion_content" ng-if="show_single_content(tile)">
+						{{tile.description}}
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div ng-controller="img_content" class="example2">
+		<div ng-init="accordion=0">
+			<table class="table_tag" ng-repeat='m in tiles'>
+				<tr>
+					<td ng-model="show" class="custom_accordion" ng-class="{active:accordion == {{m.index}}}">
+						<img class="imageplace" ng-src="{{m.image_path}}" ng-click="accordion=m.index;toggle=!toggle">
+					</td>
+					<td class="custom_accordion_content" ng-show="accordion=={{m.index}}" ng-hide="toggle">
+						<p>{{m.title}}</p>
+						<p>{{m.description}}</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>	
+</div>
+</body>
+</html>
