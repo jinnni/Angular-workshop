@@ -1,0 +1,23 @@
+.table_tag
+{
+    border: 2px solid orange;
+    padding: 20px;
+	margin: 20px;
+}
+.table_tag img{
+    border: 2px solid orange;
+}
+.custom_accordion{
+    margin: 0;
+}
+.example2,.example1{border: 1px solid #ddd;}
+.custom_accordion img{
+    padding: 10px;
+    display: block;
+	cursor:pointer;
+}
+.custom_accordion_content{
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 1px 0;
+}
