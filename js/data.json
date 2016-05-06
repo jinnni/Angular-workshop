@@ -1,1 +1,1 @@
-[{"index":"1","image_path":"images/small_1.jpg","title":"Flower at sunset 1","description":"some text that can be very long 1"},{"index":"2","image_path":"images/small_2.jpg","title":"Flower at sunset 2","description":"some text that can be very long 2"}]
+[{"index":"1","image_path":"images/small_1.jpg","title":"Flower at sunset 1","description":"some text that can be very long 1","popdata":"popup data 1"},{"index":"2","image_path":"images/small_2.jpg","title":"Flower at sunset 2","description":"some text that can be very long 2","popdata":"popup data 2"}]
