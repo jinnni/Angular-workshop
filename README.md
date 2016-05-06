@@ -18,26 +18,6 @@ Exercise 1: Build a list component which has to satisfy these following rules:
 
 Exercise 2: Make a HTML/CSS two columns layout
 
-Write the HTML and CSS needed in order to achieve this.
-
-*--------------------------------*
-| PIC      | Title: Flowers at   |
-|          | sunset.             |
-|          | Description:        |
-|----------| Some text that can  |
-|          | be very long ...    |
-|          |                     |
-*--------------------------------*
-
-*--------------------------------*
-| PIC      | Title: Flowers at   |
-|          | sunset.             |
-|          | Description:        |
-|----------| Some text that can  |
-|          | be very long ...    |
-|          |                     |
-*--------------------------------*
-
 The repository contains, solution for 1st exercise.
 
 As the source code is handled by the Git version control system, it's useful to know some features used in Git version Control.
