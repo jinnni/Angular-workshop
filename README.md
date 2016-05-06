@@ -24,8 +24,8 @@ As the source code is handled by the Git version control system, it's useful to 
 
 for example:
 
-Git Clone
-Git Checkout
+Git Clone,
+Git Checkout,
 Git Branch, etc..
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
