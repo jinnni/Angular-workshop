@@ -4,43 +4,40 @@
 <link href="css/ngDialog-theme-default.min.css" rel="stylesheet" />
 <body>
 <script src="js/lib/angular.js"></script>
+<!--script src="js/lib/animate.js"></script-->
 <script src="js/controller.js"></script>
 <script src="js/lib/ngDialog.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.min.js"></script>
 <div ng-app="myApp">
-	<div ng-controller="img_content" class="example2">
+	<div ng-controller="img_content" class="example1">
 		<div>
 			<table class="table_tag" ng-repeat='tile in tiles'>
 				<tr>
 					<td rowspan="2" class="custom_accordion" ng-model="show">
-						<img ng-src="{{tile.image_path}}">
+						<img ng-if="!!tile.image_path" ng-show="show_img" ng-src="{{tile.image_path}}" ng-click="show_image(tile.image_path)">
+						<div class="for_alt_text" ng-if="!tile.image_path" ng-show="show_img">{{tile.alt_text}}</div>
 					</td>
-					<td ng-model="show" class="custom_accordion_content" ng-class="{selected : show_single_content(tile)}" ng-click="select_image(tile)" >
+					<td role="button" tabindex="0" ng-model="show" class="custom_accordion_content" ng-class="{selected : show_single_content(tile)}" ng-click="select_image(tile)" ng-keydown="$event.keyCode === 13 ?select_image(tile):return" ng-dblclick="show_hide_input=!show_hide_input">
 						{{tile.title}}
+						<!--in progress-->
+						<input placeholder="enter image title here.." ng-show="show_hide_input" ng-keydown="$event.keyCode === 13 ? tile.title=input_url : return;$event.keyCode === 13 ? input_url='' : return" ng-model="input_url">
 					</td>
 				</tr>
 				<tr>
-					<td class="custom_accordion_content fadein fadeout" ng-if="show_single_content(tile)" ng-click='pop_data(tile.popdata)' ng-animate="'animate'">
+					<td role="button" tabindex="0" class="custom_accordion_content" ng-if="show_single_content(tile)" ng-click='pop_data(tile.popdata)' ng-keydown="$event.keyCode === 13 ?pop_data(tile.popdata):return">
 						{{tile.description}}
+						<!--in progress-->
+						<input placeholder="enter image content here.." ng-show="show_hide_input" ng-keydown="$event.keyCode === 13 ? tile.description=input_url : return;$event.keyCode === 13 ? input_url='': return" ng-model="input_url">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><!--in progress-->
+						<input placeholder="enter image url here.." class="image_url1" ng-model="input_url" ng-keydown="$event.keyCode === 13 ?tile.image_path=check_promise(input_url):return" ng-show="false" ng-disable="!show_hide_input"><!--ng-show=!show_hide_input-->
 					</td>
 				</tr>
 			</table>
 		</div>
 	</div>
-	<!--div ng-controller="img_content" class="example2">
-		<div ng-init="accordion=0">
-			<table class="table_tag" ng-repeat='m in tiles'>
-				<tr>
-					<td ng-model="show" class="custom_accordion" ng-class="{active:accordion == {{m.index}}}">
-						<img class="imageplace" ng-src="{{m.image_path}}" ng-click="accordion=m.index;toggle=!toggle">
-					</td>
-					<td class="custom_accordion_content" ng-show="accordion=={{m.index}}" ng-hide="toggle">
-						<p>{{m.title}}</p>
-						<p>{{m.description}}</p>
-					</td>
-				</tr>
-			</table>
-		</div>
-	</div-->	
 </div>
 </body>
 </html>
